@@ -82,7 +82,7 @@ public extension TimeInterval {
 		})
 	}
 
-	//@available(*, deprecated: 5.0.13, obsoleted: 5.1, message: "Use toIntervalString function instead")
+	// @available(*, deprecated: 5.0.13, obsoleted: 5.1, message: "Use toIntervalString function instead")
 	func toString(options callback: ((inout ComponentsFormatterOptions) -> Void)? = nil) -> String {
 		return self.toIntervalString(options: callback)
 	}
@@ -124,7 +124,7 @@ public extension TimeInterval {
 	///
 	/// - Parameter zero: behaviour with zero.
 	/// - Returns: string representation
-	func toClock(zero: DateComponentsFormatter.ZeroFormattingBehavior =  [.pad, .dropLeading]) -> String {
+	func toClock(zero: DateComponentsFormatter.ZeroFormattingBehavior = [.pad, .dropLeading]) -> String {
 		return toIntervalString(options: {
             $0.collapsesLargestUnit = true
             $0.maximumUnitCount = 0

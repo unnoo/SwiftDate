@@ -81,7 +81,7 @@ public extension DateComponents {
 				.nanosecond, .calendar, .timeZone]
 	}
 
-	internal static let allComponents: [Calendar.Component] =  [.nanosecond, .second, .minute, .hour,
+	internal static let allComponents: [Calendar.Component] = [.nanosecond, .second, .minute, .hour,
 																.day, .month, .year, .yearForWeekOfYear,
 																.weekOfYear, .weekday, .quarter, .weekdayOrdinal,
 																.weekOfMonth]

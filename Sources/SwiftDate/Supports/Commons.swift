@@ -22,7 +22,7 @@ internal struct Atomic<Value> {
     init(wrappedValue: Value) {
         self.value = wrappedValue
     }
-    
+
     var wrappedValue: Value {
         get {
             return queue.sync { value }
@@ -31,7 +31,7 @@ internal struct Atomic<Value> {
             queue.sync { value = newValue }
         }
     }
-    
+
 }
 
 // MARK: - DateFormatter
@@ -111,7 +111,7 @@ public enum SymbolFormatStyle {
 public struct DateFormats {
 
 	/// This is the built-in list of all supported formats for auto-parsing of a string to a date.
-	internal static let builtInAutoFormat: [String] =  [
+	internal static let builtInAutoFormat: [String] = [
 		DateFormats.iso8601,
 		"yyyy'-'MM'-'dd'T'HH':'mm':'ssZ",
 		"yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSSZ",
@@ -263,7 +263,7 @@ public enum DateRelatedType {
 	case yesterday
 	case yesterdayAtStart
 	case nearestMinute(minute: Int)
-	case nearestHour(hour :Int)
+	case nearestHour(hour: Int)
 	case nextWeekday(_: WeekDay)
 	case nextDSTDate
 	case prevMonth
@@ -313,7 +313,7 @@ public struct TimeCalculationOptions {
 private class BundleFinder {}
 
 extension Foundation.Bundle {
-    
+
     /// Returns the resource bundle associated with the current Swift module.
     /// This is used instead of `module` to allows compatibility outside the SwiftPM environment (ie. CocoaPods).
     static var appModule: Bundle? = {
@@ -327,7 +327,7 @@ extension Foundation.Bundle {
             Bundle(for: BundleFinder.self).resourceURL,
 
             // For command-line tools.
-            Bundle.main.bundleURL,
+            Bundle.main.bundleURL
         ]
 
         for candidate in candidates {
@@ -336,8 +336,8 @@ extension Foundation.Bundle {
                 return bundle
             }
         }
-        
+
         return nil
     }()
-    
+
 }
